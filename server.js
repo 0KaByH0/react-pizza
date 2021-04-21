@@ -1,8 +1,8 @@
 const { static } = require('express');
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router('public/db.json');
-const middlewares = jsonServer.defaults('build');
+const router = jsonServer.router('./public/db.json');
+const middlewares = jsonServer.defaults('./build');
 
 server.use(middlewares);
 server.use(router);
