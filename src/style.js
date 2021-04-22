@@ -75,7 +75,7 @@ export const useStyles = makeStyles((mainTheme) => ({
     height: 50,
     marginRight: '7px',
     backgroundColor: '#e9e9e966',
-    '&.Mui-selected': {
+    '&.MuiListItem-root.Mui-selected': {
       backgroundColor: '#282828',
       color: '#F9F9F9',
       '&:hover': {
@@ -142,12 +142,15 @@ export const useStyles = makeStyles((mainTheme) => ({
   pizzaBlockSelectorFirstRow: {
     padding: '8px',
     borderRadius: '5px',
-    width: '50%',
+    maxWidth: '50%',
     textTransform: 'none',
-    justifyContent: 'center',
     fontFamily: 'Proxima Nova, Roboto, system-ui, Tahoma, sans-serif',
     fontWeight: 600,
     fontSize: '14px',
+
+    '&.MuiListItem-root': {
+      justifyContent: 'center',
+    },
     '&.Mui-selected': {
       backgroundColor: '#fff;',
       fontWeight: 'bold',
@@ -166,12 +169,15 @@ export const useStyles = makeStyles((mainTheme) => ({
   pizzaBlockSelectorSecondRow: {
     padding: '8px',
     borderRadius: '5px',
-    width: '33%',
+    maxWidth: '33%',
     textTransform: 'none',
-    justifyContent: 'center',
     fontFamily: 'Proxima Nova, Roboto, system-ui, Tahoma, sans-serif',
     fontWeight: 600,
     fontSize: '14px',
+
+    '&.MuiListItem-root': {
+      justifyContent: 'center',
+    },
     '&.Mui-selected': {
       backgroundColor: '#fff;',
       cursor: 'auto',

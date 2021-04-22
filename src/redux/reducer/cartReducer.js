@@ -47,6 +47,7 @@ export default function cart(state = initialState, action) {
       };
 
     case 'DELETE_PIZZA':
+      console.log(state.items);
       let tempObj = {
         ...state.items,
         [action.payload.id]: {
@@ -64,18 +65,21 @@ export default function cart(state = initialState, action) {
         pizzaAmount(tempObj, action.payload.id),
         action.payload.price,
       );
+
       return {
         items: tempObj,
-        totalPrice: getAllPizzaPrice(state.items),
-        totalPizzas: allPizzaAmount(state.items),
+        totalPrice: getAllPizzaPrice(tempObj),
+        totalPizzas: allPizzaAmount(tempObj),
       };
 
     case 'REMOVE_ITEM':
       delete state.items[action.payload];
+      const newItems = { ...state.items };
+
       return {
         items: { ...state.items },
-        totalPrice: state.items ? getAllPizzaPrice(state.items) : 0,
-        totalPizzas: state.items ? allPizzaAmount(state.items) : 0,
+        totalPrice: newItems ? getAllPizzaPrice(newItems) : 0,
+        totalPizzas: newItems ? allPizzaAmount(newItems) : 0,
       };
 
     case 'CLEAR_CART':
